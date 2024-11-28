@@ -1,0 +1,80 @@
+.tournament-slider {
+    padding: 20px;
+    color: white;
+    text-align: center;
+  }
+  
+  .slider-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .tournament-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .tournament-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .tournament-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .tournament-info {
+    padding: 10px;
+  }
+  
+  .status-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    background: #28a745;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .tournament-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .tournament-type {
+    font-size: 0.9rem;
+    color: #bbb;
+    margin-bottom: 10px;
+  }
+  
+  .tournament-details {
+    margin: 10px 0;
+  }
+  
+  .details-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  
+  .team-player-info {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+  }
+  

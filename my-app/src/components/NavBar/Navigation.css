@@ -1,0 +1,44 @@
+a{
+  text-decoration: none;
+ }
+
+
+.navbar {
+    display: flex;
+    height: 10vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #333;
+    color: white;
+  }
+  
+  /* Left Navigation */
+  .nav-left, .nav-right {
+    display: flex;
+    gap: 15px;
+  }
+
+  /* Logo Styling */
+  .logo {
+    display: flex;
+    justify-content: center;
+    flex: 1; 
+   
+  }
+  
+  .logo-img {
+    height: 50px;
+  }
+  
+  /* Navigation Links */
+  .nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #f0a500;
+  }

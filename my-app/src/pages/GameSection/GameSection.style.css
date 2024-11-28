@@ -1,0 +1,124 @@
+.game-scroll {
+  padding: 20px;
+
+  height: 600px; /* Fixed height */
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center;
+}
+
+.game-scroll-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.game-scroll-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.game-scroll-title span {
+  color: #ffa500; /* Highlight color */
+}
+
+.game-scroll-content {
+  display: flex;
+  gap: 20px;
+  height: 100%; /* Ensures content respects fixed height */
+}
+
+.game-scroll-main {
+  flex: 2;
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-scroll-main-image {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.game-scroll-main-details {
+  margin-top: 20px;
+}
+
+.game-scroll-main-title {
+  color: #ffa500;
+  font-size: 1.5rem;
+}
+
+.game-scroll-main-meta {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.game-scroll-main-meta li {
+  margin: 5px 0;
+}
+
+.game-scroll-main-buy {
+  padding: 10px 20px;
+  background-color: #ffa500;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.game-scroll-main-buy:hover {
+  background-color: #e59400;
+}
+
+.game-scroll-sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 100%; /* Make it responsive within fixed height */
+  overflow-y: auto; /* Enable scroll for sidebar */
+}
+
+.game-scroll-item {
+  background: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-scroll-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.game-scroll-item.active {
+  border: 2px solid #ffa500;
+}
+
+.game-scroll-item h4 {
+  color: #666;
+  margin: 5px 0;
+}
+
+.game-scroll-item h3 {
+  color: #222;
+  margin: 5px 0;
+}
+
+.game-scroll-item img {
+  max-width: 100%;
+  border-radius: 8px;
+}
