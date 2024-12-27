@@ -1,6 +1,6 @@
 .game-scroll {
   padding: 20px;
-
+  color: black;
   height: 600px; /* Fixed height */
   display: flex;
   align-items: center; /* Vertically center content */

@@ -105,7 +105,7 @@ const TournamentSlider = () => {
       </Swiper>
     </div>
 
-    <button className="btn-direct">More</button>
+    <a href="/tournaments" className="btn-direct">Explore</a>
     </>
   );
 };
