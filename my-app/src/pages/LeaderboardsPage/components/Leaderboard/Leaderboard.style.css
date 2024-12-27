@@ -1,0 +1,78 @@
+.lboard-table {
+    height: 90%;
+    width: 90%;
+}
+
+.lboard-logs {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.lboard-list {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.lboard-logo {
+    height: 80px;
+    width: 80px;
+    border: 1px solid white;
+    object-fit: contain;
+    object-position: center;
+    overflow: hidden;
+}
+
+.lboard-details {
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.lboard-tags {
+    color: black;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag-box {
+    color: black;
+    background-color: white;
+    padding: 5px;
+}
+
+.tag-type {
+    background-color: #ffa500;
+}
+
+.lboard-lapse {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.tag-cost {
+    background-color: greenyellow;
+}
+
+.lboard-status {
+    width: 12%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}

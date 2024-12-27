@@ -1,5 +1,5 @@
 import "./TournamentList.style.css"
-import React, { useState } from 'react'
+import React from 'react'
 import { SlRefresh } from "react-icons/sl";
 import { BsSearch } from "react-icons/bs";
 
@@ -25,6 +25,7 @@ const TournamentList = () => {
         {
           id: 2,
           heading: "Frostbite Championship",
+          logo:"WAA-2.jpg",
           mode: "MOBA",
           region: "EUW",
           type: "Advanced",
@@ -41,6 +42,7 @@ const TournamentList = () => {
         {
           id: 3,
           heading: "Battle Royale Showdown",
+          logo:"WAA-2.jpg",
           mode: "Battle Royale",
           region: "NA",
           type: "Expert",
@@ -57,6 +59,7 @@ const TournamentList = () => {
         {
           id: 4,
           heading: "Legendary Arena Trials",
+          logo:"WAA-2.jpg",
           mode: "Strategy",
           region: "APAC",
           type: "Basic",
@@ -73,6 +76,7 @@ const TournamentList = () => {
         {
           id: 5,
           heading: "E-sports Masters Cup",
+          logo:"WAA-2.jpg",
           mode: "FPS",
           region: "NA",
           type: "Pro",
@@ -89,6 +93,7 @@ const TournamentList = () => {
         {
           id: 6,
           heading: "Ultimate Smash Tournament",
+          logo:"WAA-2.jpg",
           mode: "Fighting",
           region: "EU",
           type: "Intermediate",
@@ -103,9 +108,7 @@ const TournamentList = () => {
           status: "In Progress"
         }
       ];
-
-      const [Tour, setTour] =useState(tournaments[0])
-      const getImagePath = (logo) => require(`./assets/images/${Tour.logo}`);
+      const getImagePath = (logo) => require(`./assets/images/${logo}`);
   return (
     <>
         <div className="tour-container">
@@ -159,7 +162,7 @@ const TournamentList = () => {
         <div className="tour-table">
         <div className="tour-logs">
         {tournaments.map((Tour,index)=>(            
-                <div className="tour-list">
+                <div className="tour-list" key={index}>
                     <div className="tour-logo">
                         <img src={getImagePath(Tour.logo)} alt={Tour.game}/>
                     </div>
