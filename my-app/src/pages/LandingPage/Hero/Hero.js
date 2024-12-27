@@ -1,9 +1,9 @@
 import React from "react";
-import "./landing.style.css";
+import "./Hero.style.css";
 
-const LandingPage = () => {
+const Hero = () => {
   return (
-    <div className="landing-page">
+    <div className="hero-page">
       {/* Left Section */}
       <div className="content-section">
         <h1 className="main-heading">Welcome to the Event</h1>
@@ -29,4 +29,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default Hero;

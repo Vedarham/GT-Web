@@ -5,35 +5,36 @@ const ActiveTournaments = () => {
   // Sample match data
   const allMatches = [
     {
-      leftTeam: { name: "Shuriken", score: 9, logo: "shuriken-logo.png" },
-      rightTeam: { name: "Dragons", score: 12, logo: "dragons-logo.png" },
+      leftTeam: { name: "Shuriken", score: 9, logo: "shuriken-logo.jpg" },
+      rightTeam: { name: "Dragons", score: 12, logo: "dragons-logo.jpg" },
       date: "17th October 2024, 18:00",
     },
     {
-      leftTeam: { name: "Racoons", score: 11, logo: "racoons-logo.png" },
-      rightTeam: { name: "Erudites", score: 10, logo: "erudites-logo.png" },
+      leftTeam: { name: "Racoons", score: 11, logo: "shuriken-logo.jpg" },
+      rightTeam: { name: "Erudites", score: 10, logo: "dragons-logo.jpg" },
       date: "20th October 2024, 22:00",
     },
     {
-      leftTeam: { name: "Erudites", score: 0, logo: "erudites-logo.png" },
-      rightTeam: { name: "Fox Unit", score: 0, logo: "fox-logo.png" },
+      leftTeam: { name: "Erudites", score: 0, logo: "shuriken-logo.jpg" },
+      rightTeam: { name: "Fox Unit", score: 0, logo: "dragons-logo.jpg" },
       date: "17th October 2024, 18:00",
     },
     {
-      leftTeam: { name: "Oggorilla", score: 0, logo: "oggorilla-logo.png" },
-      rightTeam: { name: "Racoons", score: 0, logo: "racoons-logo.png" },
+      leftTeam: { name: "Oggorilla", score: 0, logo: "shuriken-logo.jpg" },
+      rightTeam: { name: "Racoons", score: 0, logo: "dragons-logo.jpg" },
       date: "20th October 2024, 20:00",
     },
     {
-      leftTeam: { name: "Phoenix", score: 13, logo: "phoenix-logo.png" },
-      rightTeam: { name: "Titans", score: 15, logo: "titans-logo.png" },
+      leftTeam: { name: "Phoenix", score: 13, logo: "shuriken-logo.jpg" },
+      rightTeam: { name: "Titans", score: 15, logo: "dragons-logo.jpg" },
       date: "22nd October 2024, 19:00",
     },
     {
-      leftTeam: { name: "Lions", score: 18, logo: "lions-logo.png" },
-      rightTeam: { name: "Wolves", score: 21, logo: "wolves-logo.png" },
+      leftTeam: { name: "Lions", score: 18, logo: "shuriken-logo.jpg" },
+      rightTeam: { name: "Wolves", score: 21, logo: "dragons-logo.jpg" },
       date: "23rd October 2024, 21:00",
     },
+    
   ];
 
   // State to manage visible matches
@@ -44,6 +45,9 @@ const ActiveTournaments = () => {
     setVisibleMatches((prev) => Math.min(prev + 2, allMatches.length)); // Show 2 more matches
   };
 
+  // Helper function to get the image path
+  const getImagePath = (logo) => require(`./assets/images/${logo}`);
+
   return (
     <div className="tournament-page">
       <h1 className="title">Active Tournaments</h1>
@@ -51,7 +55,11 @@ const ActiveTournaments = () => {
         {allMatches.slice(0, visibleMatches).map((match, index) => (
           <div className="match-card" key={index}>
             <div className="team left-team">
-              <img src={match.leftTeam.logo} alt={match.leftTeam.name} className="team-logo" />
+              <img
+                src={getImagePath(match.leftTeam.logo)}
+                alt={match.leftTeam.name}
+                className="team-logo"
+              />
               <div className="team-info">
                 <span className="team-name">{match.leftTeam.name}</span>
                 <span className="team-score">{match.leftTeam.score}</span>
@@ -66,7 +74,11 @@ const ActiveTournaments = () => {
                 <span className="team-name">{match.rightTeam.name}</span>
                 <span className="team-score">{match.rightTeam.score}</span>
               </div>
-              <img src={match.rightTeam.logo} alt={match.rightTeam.name} className="team-logo" />
+              <img
+                src={getImagePath(match.rightTeam.logo)}
+                alt={match.rightTeam.name}
+                className="team-logo"
+              />
             </div>
           </div>
         ))}

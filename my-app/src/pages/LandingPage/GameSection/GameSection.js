@@ -27,6 +27,17 @@ const GameSection = () => {
     },
     {
       id: 3,
+      title: "League of Legends",
+      category: "Strategy",
+      image: "path-to-game3.jpg",
+      description:
+        "A strategic game where your decisions impact the outcome of the battle.",
+      rating: 4,
+      model: "Strategic gameplay",
+      controller: "Mobile, PC",
+    },
+    {
+      id: 4,
       title: "Valorant",
       category: "Strategy",
       image: "path-to-game3.jpg",

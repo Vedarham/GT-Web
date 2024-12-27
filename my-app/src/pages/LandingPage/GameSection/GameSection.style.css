@@ -8,14 +8,15 @@
 }
 
 .game-scroll-container {
-  max-width: 1200px;
+  width: 50%;
+  height: 350px;
   margin: 0 auto;
 }
 
 .game-scroll-title {
   font-size: 2rem;
   font-weight: bold;
-  color: #222;
+  color: white;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -87,6 +88,9 @@
   gap: 15px;
   max-height: 100%; /* Make it responsive within fixed height */
   overflow-y: auto; /* Enable scroll for sidebar */
+}
+.game-scroll-sidebar::-webkit-scrollbar {
+  display: none;
 }
 
 .game-scroll-item {

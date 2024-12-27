@@ -1,5 +1,5 @@
 
-  .landing-page {
+  .hero-page {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,7 +8,7 @@
     padding: 20px;
     background-size: cover; 
     background-position: center;
-    
+    color: aliceblue;
   }
   
   /* Left Section: Text Content */
@@ -22,7 +22,7 @@
   
   .main-heading {
     font-size: 3rem;
-    color: #333;
+    color: #44C9AB;
     margin-bottom: 10px;
   }
   

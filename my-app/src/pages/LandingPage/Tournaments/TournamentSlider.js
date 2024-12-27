@@ -47,7 +47,8 @@ const tournaments = [
 
 const TournamentSlider = () => {
   return (
-    <div className="tournament-slider">
+    <>
+      <div className="tournament-slider">
       <h2 className="slider-title">Tournaments</h2>
       <Swiper
         spaceBetween={20}
@@ -68,7 +69,11 @@ const TournamentSlider = () => {
                 className="tournament-image"
               />
               <div className="tournament-info">
-                <span className="status-tag">{tournament.status}</span>
+              <div className="tournament-register">
+              <span className="status-tag">{tournament.status}</span>
+              <button className="reg-btn">Regsiter</button>
+              </div>
+                
                 <h3 className="tournament-title">{tournament.title}</h3>
                 <p className="tournament-type">{tournament.type}</p>
                 <div className="tournament-details">
@@ -99,6 +104,9 @@ const TournamentSlider = () => {
         ))}
       </Swiper>
     </div>
+
+    <button className="btn-direct">More</button>
+    </>
   );
 };
 
