@@ -8,7 +8,7 @@ const TournamentsPage = () => {
     <>
     <TournamentSlider/>
     {/* <TournamentCarousel/> */}
-       <TournamentList/> 
+    <TournamentList/> 
     </>
   )
 }

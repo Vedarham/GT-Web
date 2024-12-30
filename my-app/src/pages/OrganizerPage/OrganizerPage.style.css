@@ -1,0 +1,11 @@
+.org-cont{
+    width: 100%;
+    height: auto;
+    padding: 100px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    /* align-content: center; */
+    flex-wrap: wrap;
+    gap: 25px;
+}

@@ -1,0 +1,29 @@
+.faq-page {
+    padding: 2rem;
+    background-color: transparent;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .faq-page h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  
+  .faq-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .faq-category {
+    margin-bottom: 2rem;
+  }
+  
+  .faq-category h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 600;
+  }
+  

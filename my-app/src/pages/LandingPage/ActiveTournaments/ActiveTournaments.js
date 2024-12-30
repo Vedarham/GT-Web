@@ -50,7 +50,7 @@ const ActiveTournaments = () => {
 
   return (
     <div className="tournament-page">
-      <h1 className="title">Active Tournaments</h1>
+      <h1 className="title">Live Tournaments</h1>
       <div className="matches">
         {allMatches.slice(0, visibleMatches).map((match, index) => (
           <div className="match-card" key={index}>

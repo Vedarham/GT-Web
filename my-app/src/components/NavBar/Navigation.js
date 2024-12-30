@@ -21,11 +21,13 @@ const Navigation = () => {
 
       {/* Right Navigation Links */}
       <div className="nav-right">
-      <a href="/organisers" className="nav-link">Organisers</a>
+      <a href="/Event-Organizers" className="nav-link">Organizers</a>
       <a href="/subscription" className="nav-link">Subscription</a>
-        <a href="/faq" className="nav-link">FAQ</a>
-        <a href="/contact-us" className="nav-link">Contact Us</a>
+        <a href="/FAQ" className="nav-link">FAQ</a>
+        <a href="/ContactForm" className="nav-link">Contact Us</a>
         <a href="/Ourteam" className="nav-link">Team</a>
+        <a href='/login' className='nav-link'>Login</a>
+        <a href='/signup' className='nav-link'>SignUp</a>
       </div>
     </nav>
 
