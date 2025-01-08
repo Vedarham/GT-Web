@@ -11,6 +11,7 @@ import ContactForm from './pages/ContactPage/ContactPage.js';
 import OrganizerPage from './pages/OrganizerPage/OrganizerPage.js';
 import Login from './components/Login/Login.js';
 import SignUp from './components/SignUp/Signup.js';
+import ProfilePage from './pages/ProfilePage/ProfilePage.js';
 function App() {
   // const [service , setService] = useState('http://localhost:5000/')
   // useEffect(()=>{
@@ -52,6 +53,10 @@ function App() {
     {
       path:"/Event-Organizers",
       element:<OrganizerPage/>
+    },
+    {
+      path:"/profile",
+      element:<ProfilePage/>
     }
   ])
   return (

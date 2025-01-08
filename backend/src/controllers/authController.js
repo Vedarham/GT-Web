@@ -1,17 +1,19 @@
-import bcrypt from "bcrypt"
 
-import {asyncHandler} from "../utils/asyncHandler.util.js"
-import {apiError} from "../utils/apiError.util.js"
-import {apiResponse} from "../utils/apiResponse.util.js"
+import { asyncHandler } from "../utils/asyncHandler.util.js"
+import { apiError } from "../utils/apiError.util.js"
+import { apiResponse } from "../utils/apiResponse.util.js"
 import { Gamer } from "../models/gamer.model.js";
-const signupUser = asyncHandler(async(req,res)=>{
-    const {username, email, fullname , password} = req.body;
+import { generateToken } from "../utils/generateToken.util.js";
 
-    // if([email,fullname,password].some((field)=>
-    //     field?.trim()===""
-    // )){
-    //     throw new apiError(400,"Something Went Wrong!")
-    // }
+const signupUser = asyncHandler(async (req, res) => {
+    const { username, email, fullname, password } = req.body;
+    const existedGamer = await Gamer.findOne({
+        $or: [{ username }, { email }]
+    })
+
+    if (existedGamer) {
+        throw new apiError(409, "User Already Exists!")
+    }
 
     const gamer = await Gamer.create({
         username: username.toLowerCase(),
@@ -22,8 +24,8 @@ const signupUser = asyncHandler(async(req,res)=>{
 
     const createdGamer = await Gamer.findById(gamer._id).select("-password -refreshToken")
 
-    if(!createdGamer){
-        throw new apiError(500,"Something went wrong while registering!")
+    if (!createdGamer) {
+        throw new apiError(500, "Something went wrong while registering!")
     }
 
 
@@ -32,28 +34,48 @@ const signupUser = asyncHandler(async(req,res)=>{
     )
 })
 
-const loginUser = asyncHandler(async(req,res)=>{
-    const { email , password} = req.body;
-    if(!email){
+const loginUser = asyncHandler(async (req, res) => {
+    const { email, password } = req.body;
+    if (!email) {
         throw new apiError(400, "Invalid User Credentials")
     }
     const gamer = await Gamer.findOne({ email })
-    if(!gamer){
-        throw new apiError(404,"Credential doesn't exist")
+    if (!gamer) {
+        throw new apiError(404, "Credential doesn't exist")
     }
     const isPasswordValid = await gamer.isPasswordCorrect(password)
-    if (!isPasswordValid){
-        throw new apiError(401,"Invalid User Credentials")
+    if (!isPasswordValid) {
+        throw new apiError(401, "Invalid User Credentials")
     }
+    
+    const {accessToken,refreshToken}= await generateToken(gamer._id);
 
     const loggedGamer = await Gamer.findById(gamer._id).select("-password -refreshToken")
 
+    const options = {
+        httpOnly: true,
+        secure: true,
+    }
+
     return res
         .status(201)
+        .cookie("accessToken", accessToken, options)
+        .cookie("refreshToken", refreshToken, options)
         .json(
-        new apiResponse(200,
-            {gamer: loggedGamer},
-            "Login Success!"))
+            new apiResponse(201,
+                { gamer: loggedGamer, accessToken, refreshToken },
+                "Login Success!"))
 })
 
-export {loginUser, signupUser}
+const getUser  =asyncHandler(async(req,res)=>{
+    
+    const gamer = await Gamer.findById(req.userId).select("-password -refreshToken");
+
+  if (!gamer) {
+    throw new apiError(404, "User not found");
+  }
+
+  res.status(200).json(gamer);
+});
+
+export { loginUser, signupUser, getUser }

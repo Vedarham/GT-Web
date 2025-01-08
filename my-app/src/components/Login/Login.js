@@ -1,9 +1,9 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
 import "./Login.css"
-
+import { useNavigate } from 'react-router-dom'
 const Login = () => {
-
+  let navigate = useNavigate();
     const {
         register,
         handleSubmit,
@@ -21,6 +21,10 @@ const Login = () => {
         const res = await fetch('http://localhost:8000/api/auth/login', {method:"POST",headers:{
           "Content-Type":"application/json",
         }, body: JSON.stringify(data)})
+        if(res.status !==201){
+          navigate(-1)
+        }
+        navigate('/profile')
       }
     
       return (

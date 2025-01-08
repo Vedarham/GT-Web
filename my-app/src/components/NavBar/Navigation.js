@@ -10,6 +10,7 @@ const Navigation = () => {
         <a href="/leaderboards" className="nav-link">Leaderboards</a>
         <a href="/news" className="nav-link">News</a>
         <a href="/shop" className="nav-link">Shop</a>
+        <a href='/profile' className='nav-link'>Profile</a>
       </div>
 
       {/* Logo */}
@@ -28,6 +29,7 @@ const Navigation = () => {
         <a href="/Ourteam" className="nav-link">Team</a>
         <a href='/login' className='nav-link'>Login</a>
         <a href='/signup' className='nav-link'>SignUp</a>
+        {/* <a href='/logout' className='nav-link'>Logout</a> */}
       </div>
     </nav>
 

@@ -1,24 +1,33 @@
 import React from 'react'
 import { useForm } from "react-hook-form"
 import "./Signup.css"
+import { useNavigate } from 'react-router-dom'
 const SignUp = () => {
+  let navigate = useNavigate();
+  // const [errored,setError] = useState(false);
     const {
         register,
         handleSubmit,
         // watch,
         formState: { errors, isSubmitting },
       } = useForm()
-    
+      // const existUser=()=>{
+      //   setError(true);
+      // }
       const onSubmit = async (data) => {
-        await fetch('http://localhost:8000/api/auth/signup',{ method:"POST",headers:{
+        const res = await fetch('http://localhost:8000/api/auth/signup',{ method:"POST",headers:{
           "Content-Type":"application/json",
         }, body:JSON.stringify(data)})
-  
+        if(res.status !== 201){
+          navigate('/signup');
+          // existUser()
+        }
       }
 
       return (
         <div className='sign-cont'>
         <form className='sign-form'  onSubmit={handleSubmit(onSubmit)}>
+        {/* {errored ?<div className='err-txt'>User Already exist</div> : <></>} */}
         <div className='sign-details'>
           <h2>Sign-Up</h2>
           <h5>Welcome! Glory road to Champ!</h5>
