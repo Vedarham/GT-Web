@@ -21,10 +21,13 @@ const Login = () => {
         const res = await fetch('http://localhost:8000/api/auth/login', {method:"POST",headers:{
           "Content-Type":"application/json",
         }, body: JSON.stringify(data)})
-        if(res.status !==201){
-          navigate(-1)
+        console.log(res.status)
+        if(res.status === 201 || res.status===200){
+          navigate('/profile')
+        }else{
+          navigate('/login')
         }
-        navigate('/profile')
+        
       }
     
       return (

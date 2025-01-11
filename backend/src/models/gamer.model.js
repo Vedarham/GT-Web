@@ -14,7 +14,6 @@ const gamerSchema = new Schema({
 
   role: { type: String, enum: ["gamer", "organizer", "publisher"], default: "gamer" },
   avatar: { type: String },
-  accessToken: { type: String },
   refreshToken: { type: String },
 
   gameIds: [{ type: Schema.Types.ObjectId, ref: "Game" }], // Referenced games
@@ -42,9 +41,12 @@ const gamerSchema = new Schema({
 });
 
 gamerSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    return next();
+  }
   this.password = await bcrypt.hash(this.password, 10);
-  next()
-})
+  next();
+});
 
 gamerSchema.methods.isPasswordCorrect = async function (password) {
   return await bcrypt.compare(password, this.password)

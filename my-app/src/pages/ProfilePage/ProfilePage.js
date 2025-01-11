@@ -12,7 +12,7 @@ const ProfilePage = () => {
     } catch (error) {
       console.error(error);
     }
-  }
+  } 
   getUser()
   return (
     <>

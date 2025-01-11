@@ -5,6 +5,7 @@ import { apiResponse } from "../utils/apiResponse.util.js"
 import { Gamer } from "../models/gamer.model.js";
 import { generateToken } from "../utils/generateToken.util.js";
 
+
 const signupUser = asyncHandler(async (req, res) => {
     const { username, email, fullname, password } = req.body;
     const existedGamer = await Gamer.findOne({
@@ -40,22 +41,32 @@ const loginUser = asyncHandler(async (req, res) => {
         throw new apiError(400, "Invalid User Credentials")
     }
     const gamer = await Gamer.findOne({ email })
-    if (!gamer) {
+    if (!gamer) { 
         throw new apiError(404, "Credential doesn't exist")
     }
     const isPasswordValid = await gamer.isPasswordCorrect(password)
     if (!isPasswordValid) {
         throw new apiError(401, "Invalid User Credentials")
     }
-    
+    if (gamer.refreshToken) {
+        return res
+            .status(200)
+            .cookie("accessToken", gamer.generateAccessToken(), { httpOnly: true, secure: true })
+            .cookie("refreshToken", gamer.generateRefreshToken(), { httpOnly: true, secure: true })
+            .json(new apiResponse(200, { gamer: gamer._id }, "Re-login Success!"));
+    }
     const {accessToken,refreshToken}= await generateToken(gamer._id);
 
     const loggedGamer = await Gamer.findById(gamer._id).select("-password -refreshToken")
 
     const options = {
         httpOnly: true,
-        secure: true,
+        secure: false,
+        sameSite: "lax"
     }
+
+    // console.log("Access Token:", accessToken);
+    // console.log("Refresh Token:", refreshToken); 
 
     return res
         .status(201)
@@ -67,15 +78,19 @@ const loginUser = asyncHandler(async (req, res) => {
                 "Login Success!"))
 })
 
-const getUser  =asyncHandler(async(req,res)=>{
+const getUser = asyncHandler(async(req,res)=>{
     
-    const gamer = await Gamer.findById(req.userId).select("-password -refreshToken");
-
+const gamer = await Gamer.findById(req.userId).select("-password -refreshToken");
+console.log(gamer)
   if (!gamer) {
     throw new apiError(404, "User not found");
   }
 
-  res.status(200).json(gamer);
+  res.status(200).json(gamer); 
 });
 
-export { loginUser, signupUser, getUser }
+// const logoutUser = asyncHandler(async(req,res)=>{
+//     Gamer.findById()
+// })
+
+export { loginUser, signupUser, getUser } 
