@@ -9,27 +9,26 @@ import FAQPage from './pages/FAQPage/FAQPage.js'
 import ContactForm from './pages/ContactPage/ContactPage.js';
 // import { useEffect, useState } from 'react';
 import OrganizerPage from './pages/OrganizerPage/OrganizerPage.js';
-import Login from './components/Login/Login.js';
-import SignUp from './components/SignUp/Signup.js';
+// import Login from './components/Login/Login.js';
+// import SignUp from './components/SignUp/Signup.js';
 import ProfilePage from './pages/ProfilePage/ProfilePage.js';
+import ShopPage from './pages/ShopPage/ShopPage.js';
+import SubscriptionPage from './pages/SubscriptionPage/SubscPage.js';
+import TournamentForm from './pages/ProfilePage/components/TournamentForm/TournamentForm.js';
+import AboutPage from './pages/AboutPage/components/AboutPage.js';
+import AuthPage from './pages/AuthPage/AuthPage.js';
+
 function App() {
-  // const [service , setService] = useState('http://localhost:5000/')
-  // useEffect(()=>{
-  //   axios.get('/api/arham')
-  //   .then((res)=>{
-  //     console.log(res.data)
-  //   })
-  // })
 
   const router = createBrowserRouter([
     {
       path:"/login",
-      element:<Login/>
+      element:<AuthPage/>
     },
-    {
-      path:"/signup",
-      element:<SignUp/>
-    },
+    // {
+    //   path:"/signup",
+    //   element:<SignUp/>
+    // },
     {
       path:"/",
       element:<LandingPage/>
@@ -57,6 +56,20 @@ function App() {
     {
       path:"/profile",
       element:<ProfilePage/>
+    },
+    {
+      path:"/shop",
+      element:<ShopPage/>
+    },
+    {
+      path:"/subscription",
+      element:<SubscriptionPage/>
+    },{
+      path:"/host",
+      element:<TournamentForm/>
+    },{
+      path:"/about-us",
+      element:<AboutPage/>
     }
   ])
   return (

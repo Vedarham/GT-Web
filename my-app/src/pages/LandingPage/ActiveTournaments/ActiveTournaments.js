@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./ActiveTournaments.style.css";
 
 const ActiveTournaments = () => {
-  // Sample match data
   const allMatches = [
     {
       leftTeam: { name: "Shuriken", score: 9, logo: "shuriken-logo.jpg" },
@@ -37,20 +36,16 @@ const ActiveTournaments = () => {
     
   ];
 
-  // State to manage visible matches
-  const [visibleMatches, setVisibleMatches] = useState(3); // Initially show 3 matches
 
-  // Function to handle the "More" button
+  const [visibleMatches, setVisibleMatches] = useState(3); // Initially show 3 matches
   const handleShowMore = () => {
     setVisibleMatches((prev) => Math.min(prev + 2, allMatches.length)); // Show 2 more matches
   };
-
-  // Helper function to get the image path
   const getImagePath = (logo) => require(`./assets/images/${logo}`);
 
   return (
     <div className="tournament-page">
-      <h1 className="title">Live Tournaments</h1>
+      <h1 className="title"> <span>Live</span> Tournaments</h1>
       <div className="matches">
         {allMatches.slice(0, visibleMatches).map((match, index) => (
           <div className="match-card" key={index}>

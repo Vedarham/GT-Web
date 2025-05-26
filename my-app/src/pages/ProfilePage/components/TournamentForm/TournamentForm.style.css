@@ -1,0 +1,95 @@
+
+  .tournament-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .tournament-page h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .tournament-form {
+    background-color: #1e1e2f;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    display: grid;
+    gap: 15px;
+  }
+  
+  .tournament-form input,
+  .tournament-form select,
+  .tournament-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .tournament-form input,
+  .tournament-form select {
+    background-color: #2d2d3e;
+    color: #ffffff;
+  }
+  
+  .tournament-form button {
+    max-width: 30%;
+    background-color: #9333ea;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tournament-form button:hover {
+    background-color: #7a2cbf;
+  }
+  
+  .tournament-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .tournament-card {
+    background-color: #2d2d3e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .tournament-card img {
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .tournament-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .tournament-card p {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+  
+  .tournament-card button {
+    padding: 8px 16px;
+    background-color: #e11d48;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tournament-card button:hover {
+    background-color: #b91c44;
+  }
+  

@@ -1,85 +1,139 @@
+.bg-shadow {
+  position: absolute;
+  width: 100%;
+  height: 90vh;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
 
-  .hero-page {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 90vh; /* Full-screen height */
-    width: 100%;
-    padding: 20px;
-    background-size: cover; 
-    background-position: center;
-    color: aliceblue;
-  }
-  
-  /* Left Section: Text Content */
-  .content-section {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-  }
-  
+.hero-page {
+  position: relative;
+  top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100%;
+  padding: 20px;
+  background-image: url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80");
+  background-size: cover;
+  background-position: center;
+  color: aliceblue;
+}
+
+.content-section {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 2;
+  text-align: center; /* Ensures text is centered on smaller screens */
+}
+
+.main-heading {
+  font-size: 4.8rem;
+  background: linear-gradient(to right, #9333ea, #2563eb);
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 10px;
+}
+
+.sub-heading {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.context {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+  justify-content: center; /* Center buttons on smaller screens */
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: 0.2s all ease-in-out;
+}
+
+.btn-register {
+  background: linear-gradient(to right, #9333ea, #2563eb);
+  color: white;
+  scale: 1;
+}
+
+.btn-register:hover {
+  scale: 1.12;
+}
+
+.btn-ticket {
+  border-image: linear-gradient(to right, #9333ea, #2563eb) 1;
+  opacity: 0.85;
+  border-width: 2px;
+  border-style: solid;
+  background-color: transparent;
+  color: white;
+}
+
+.btn-ticket:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .main-heading {
-    font-size: 3rem;
-    color: #44C9AB;
-    margin-bottom: 10px;
-  }
-  
-  .sub-heading {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-  }
-  
-  .context {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .button-group {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .btn {
-    padding: 10px 20px;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn-register {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .btn-register:hover {
-    background-color: #0056b3;
-  }
-  
-  .btn-ticket {
-    background-color: #28a745;
-    color: white;
-  }
-  
-  .btn-ticket:hover {
-    background-color: #1e7e34;
-  }
-  
-  /* Right Section: Image */
-  .image-section {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; /* Ensure the image touches the bottom */
+    font-size: 3rem; /* Adjust heading size */
   }
 
-  .landing-image {
-    height: 100%; 
-    width: auto; 
-    object-fit: cover; 
-    object-position: center;
+  .sub-heading {
+    font-size: 1.5rem; /* Adjust sub-heading size */
   }
-  
+
+  .context {
+    font-size: 1.2rem; /* Adjust context size */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .button-group {
+    gap: 10px; /* Reduce button gap */
+  }
+
+  .btn {
+    padding: 8px 15px; /* Adjust button padding */
+    font-size: 0.9rem; /* Adjust button font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 2.5rem; /* Smaller heading size for small screens */
+  }
+
+  .sub-heading {
+    font-size: 1.2rem; /* Smaller sub-heading size */
+  }
+
+  .context {
+    font-size: 1rem; /* Smaller context size */
+  }
+
+  .button-group {
+    flex-direction: column; /* Stack buttons vertically */
+  }
+
+  .btn {
+    width: 100%; /* Full-width buttons */
+    font-size: 0.8rem;
+  }
+}

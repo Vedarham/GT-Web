@@ -1,4 +1,6 @@
 .faq-page {
+  position: relative;
+    top: 60px;
     padding: 2rem;
     background-color: transparent;
     max-width: 1200px;

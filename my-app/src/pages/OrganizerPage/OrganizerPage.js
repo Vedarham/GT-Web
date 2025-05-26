@@ -1,87 +1,97 @@
-import React from 'react'
-import Card from '../../components/Card/Card.js'
-import "./OrganizerPage.style.css"
-const OrganizerPage = () => {
+import React from "react";
+import "./OrganizerPage.style.css";
 
-    const organizer = [
-        {
-            id: 1,
-            name: "John Doe",
-            totalEvents: 15,
-            recentEvent: {
-              title: "Valorant Pro League",
-              date: "20th December 2024",
-              participants: 50,
-              description: "An exciting tournament featuring top Valorant teams.",
-            },
-          },
-          {
-            id: 2,
-            name: "Jane Smith",
-            totalEvents: 10,
-            recentEvent: {
-              title: "CS:GO Championships",
-              date: "15th November 2024",
-              participants: 40,
-              description: "A thrilling CS:GO tournament with intense action.",
-            },
-          },
-          {
-            id: 3,
-            name: "David Brown",
-            totalEvents: 20,
-            recentEvent: {
-              title: "Rocket League Showdown",
-              date: "25th October 2024",
-              participants: 30,
-              description: "A high-energy tournament showcasing Rocket League pros.",
-            },
-          },
-          {
-            id: 4,
-            name: "Emily White",
-            totalEvents: 12,
-            recentEvent: {
-              title: "Apex Legends Clash",
-              date: "10th December 2024",
-              participants: 45,
-              description: "An epic battle royale event with top Apex players.",
-            },
-          },
-          {
-            id: 5,
-            name: "Sophia Black",
-            totalEvents: 8,
-            recentEvent: {
-              title: "PUBG Invitational",
-              date: "18th November 2024",
-              participants: 55,
-              description: "A PUBG tournament featuring squads from around the world.",
-            },
-          },
-          {
-            id: 6,
-            name: "Michael Green",
-            totalEvents: 22,
-            recentEvent: {
-              title: "FIFA Online Cup",
-              date: "5th December 2024",
-              participants: 25,
-              description: "A FIFA tournament with nail-biting matches.",
-            },
-          },
-    ]
+const OrganiserCard = ({ organiser }) => {
+  return (
+    <div className="organiser-card">
+      <div className="organiser-image">
+        <img
+          src={organiser.banner}
+          alt="Organiser"
+          className="organiser-img"
+        />
+      </div>
+      <div className="organiser-details">
+        <h3>{organiser.name}</h3>
+        <p>ID: {organiser.id}</p>
+        <p>Total Events: {organiser.totalEvents}</p>
+        <p>Recent Event: {organiser.recentEvent.title}</p>
+        <p>Date: {organiser.recentEvent.date}</p>
+        <p>Participants: {organiser.recentEvent.participants}</p>
+      </div>
+      <div className="organiser-action">
+        <button>View Details</button>
+      </div>
+    </div>
+  );
+};
+
+const OrganizerPage = () => {
+  const organisers = [
+    {
+      id: 1,
+      name: "Emily White",
+      totalEvents: 12,
+      banner:"https://i.pinimg.com/originals/ef/50/bf/ef50bf5047f7414f078b566821587c5f.jpg",
+      recentEvent: {
+        title: "Apex Legends Clash",
+        date: "10th December 2024",
+        participants: 45,
+      },
+    },
+    {
+      id: 2,
+      name: "John Smith",
+      totalEvents: 18,
+      banner:"https://img.freepik.com/free-vector/gradient-gaming-concept-facebook-post_23-2149758277.jpg",
+      recentEvent: {
+        title: "Valorant Championship",
+        date: "5th November 2024",
+        participants: 60,
+      },
+    },
+    {
+      id: 3,
+      name: "Sarah Johnson",
+      totalEvents: 22,
+      banner:"https://marketplace.canva.com/EAFzkT2aSjk/1/0/1600w/canva-dark-blue-neon-modern-gaming-event-banner-lt2qXPytCY0.jpg",
+      recentEvent: {
+        title: "CS:GO Masters",
+        date: "20th October 2024",
+        participants: 80,
+      },
+    },
+    {
+      id: 4,
+      name: "Michael Brown",
+      totalEvents: 10,
+      banner:"https://d1csarkz8obe9u.cloudfront.net/posterpreviews/pubg-game-tournament-poster-design-template-034c8b363092011715d173d7fc37da85_screen.jpg?ts=1698379969",
+      recentEvent: {
+        title: "Overwatch Open",
+        date: "15th September 2024",
+        participants: 30,
+      },
+    },
+    {
+id: 5,
+      name: "Vidyut Ambani",
+      totalEvents: 69,
+      banner:"https://imageio.forbes.com/specials-images/imageserve/5eafec6ded706b0007e654a4/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds",
+      recentEvent: {
+        title: "Ambani Aura",
+        date: "29th February 2024",
+        participants:6000,
+      },
+    },
+  ];
 
   return (
-  <>
-  <div className='org-cont'>
-        {organizer.map((org, index) => (
-          <Card key={index} org={org} />
-        ))}
-  </div>
-    
-  </>
-  )
-}
+    <div className="organiser-list">
+      {organisers.map((organiser) => (
+        <OrganiserCard key={organiser.id} organiser={organiser} />
+      ))}
+    </div>
+  );
+};
 
-export default OrganizerPage
+export default OrganizerPage;

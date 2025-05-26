@@ -1,4 +1,9 @@
 .contact-form {
+  position: relative;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: 800px;
     margin: 0 auto;
     padding: 2rem;
@@ -24,7 +29,7 @@
   
   .input-group label {
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 5px;
   }
   
   .input-group input,

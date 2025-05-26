@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from "axios"; 
 import { useForm } from "react-hook-form"
 import "./Login.css"
 import { useNavigate } from 'react-router-dom'
@@ -15,21 +16,35 @@ const Login = () => {
       //     setTimeout(()=>{
       //       res()
       //     },d*1000)
-      //   })
+      //   }) 
       // }
-      const onSubmit = async(data) => {
-        const res = await fetch('http://localhost:8000/api/auth/login', {method:"POST",headers:{
-          "Content-Type":"application/json",
-        }, body: JSON.stringify(data)})
-        console.log(res.status)
-        if(res.status === 201 || res.status===200){
-          navigate('/profile')
-        }else{
-          navigate('/login')
-        }
-        
+
+const onSubmit = async (data) => {
+  try {
+    const res = await axios.post(
+      "http://localhost:8080/api/auth/login",
+      {
+        email: data.email,
+        password: data.password,
+      },
+      {
+        withCredentials: true, 
       }
-    
+    );
+
+    console.log(res.status);
+
+    if (res.status === 200 || res.status === 201) {
+      navigate("/profile");
+    } else {
+      navigate("/login");
+    }
+  } catch (err) {
+    console.error("Login failed", err);
+    navigate("/login");
+  }
+};
+
       return (
         <>
         <div className='sign-cont'>

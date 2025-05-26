@@ -9,7 +9,8 @@ const LandingPage = () => {
     <div>
     <Hero/>
     <ActiveTournaments/>
-    <TournamentSlider/>
+    <TournamentSlider/> 
+    {/* Slider isn't responsive */}
     <GameSection/>
     </div>
   )

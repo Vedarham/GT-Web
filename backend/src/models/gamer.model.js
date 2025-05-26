@@ -17,7 +17,9 @@ const gamerSchema = new Schema({
   refreshToken: { type: String },
 
   gameIds: [{ type: Schema.Types.ObjectId, ref: "Game" }], // Referenced games
-  region: { type: String },
+  state: { type: String , required:true},
+  district: { type: String , required:true},
+  referralCode:{type:String},
 
   gameHistory: {
     totalGames: { type: Number, default: 0 },

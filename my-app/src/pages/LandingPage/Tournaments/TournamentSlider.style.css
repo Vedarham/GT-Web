@@ -1,101 +1,129 @@
-.tournament-slider {
-    padding: 20px;
-    color: white;
-    text-align: center;
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.slider {
+  display: flex;
+  gap: 20px;
+}
+
+.tournaments {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 500px;
+  background: linear-gradient(to right, #9333ea, #2563eb);
+  color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tournaments:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+}
+
+.tournaments img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tournaments .card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tournaments .card-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.tournaments .card-content p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+
+.tournaments .card-content strong {
+  color: #ffd700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.register-btn {
+  align-self: flex-start;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.register-btn:hover {
+  background: #fff;
+  color: #000;
+}
+
+.explore-btn {
+  margin: 0 auto;
+  max-width:20% ;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-image: linear-gradient(to right, #9333ea, #2563eb) 1;
+  opacity: 0.85;
+  border-width: 2px;
+  border-style: solid;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.explore-btn a{
+  color: white;
+}
+.explore-btn:hover {
+  opacity: 1;
+  background-color: rgba(170, 170, 170, 0.18);
+}
+
+/* @keyframes slide {
+  0% {
+    transform: translateX(0%);
   }
-  
-  .slider-title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: white;
+  100% {
+    transform: translateX(-100%);
   }
-  
-  .tournament-card {
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 10px;
-    text-align: left;
-    transition: transform 0.3s ease;
+} */
+
+@media (max-width: 768px) {
+  .slider {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
-  
-  .tournament-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .tournament-image {
+  .tournaments{
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-  }
-  
-  .tournament-info {
-    padding: 10px;
-  }
-  
-  .status-tag {
-    display: inline-block;
-    padding: 5px 10px;
-    background: #28a745;
-    color: white;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-  }
-  
-  .tournament-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  
-  .tournament-type {
-    font-size: 0.9rem;
-    color: #bbb;
-    margin-bottom: 10px;
-  }
-  
-  .tournament-details {
-    margin: 10px 0;
-  }
-  
-  .details-row {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .icon {
-    font-size: 1.2rem;
-    margin-right: 10px;
-  }
-  
-  .team-player-info {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.9rem;
-  }
-  .tournament-register{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .reg-btn, .btn-direct{
-    padding: 10px 30px;
-    font-size: 16px;
-    color: aliceblue;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  .reg-btn:hover , .btn-direct:hover{
-    background-color:  rgba(255, 255, 255, 0.2);
   }
 
- .btn-direct{
-  padding: 10px 20px;
-  margin-left: 50%;
-  text-align: center;
- }
+  .card-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .card-content p {
+    font-size: 0.8rem;
+  }
+}

@@ -1,105 +1,192 @@
- .tournament-page {
-    /* background: url("background-image.jpg") no-repeat center center/cover; Replace with your background */
-    height: 100%;
-    min-height: 100vh;
-    color: white;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  /* Title Styling */
+.tournament-page {
+  min-height: 80vh;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.title {
+  font-size: 2.7rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.title span {
+  background: linear-gradient(to right, #9333ea, #2563eb);
+  background-clip: text;
+  color: transparent;
+}
+
+.matches {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.match-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
+  padding: 15px 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.team-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.team-score {
+  font-size: 1.1rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #9333ea, #2563eb);
+  background-clip: text;
+  color: transparent;
+}
+
+.vs-section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #aaa;
+}
+
+.vs {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #9333ea, #2563eb);
+  background-clip: text;
+  color: transparent;
+}
+
+.date {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.more-button {
+  margin: 0 auto;
+  max-width:20% ;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-image: linear-gradient(to right, #9333ea, #2563eb) 1;
+  opacity: 0.85;
+  border-width: 2px;
+  border-style: solid;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.more-button:hover {
+  opacity: 1;
+  background-color: rgba(170, 170, 170, 0.18);
+}
+
+@media (max-width: 768px) {
   .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
   }
-  
-  /* Matches Container */
-  .matches {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Match Card */
+
   .match-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 70%;
-    padding: 15px 20px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Team Section */
-  .team {
-    display: flex;
+    width: 100%;
+    padding: 10px 15px;
     align-items: center;
     gap: 10px;
   }
-  
+
   .team-logo {
     width: 50px;
     height: 50px;
-    border-radius: 5px;
-    object-fit: cover;
-    object-position: center;
   }
-  
-  .team-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
+
   .team-name {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1rem;
   }
-  
+
   .team-score {
-    font-size: 1rem;
-    color: #f5c542;
-  }
-  
-  /* VS Section */
-  .vs-section {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: #aaa;
-  }
-  
-  .vs {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #f5c542;
-  }
-  
-  .date {
     font-size: 0.9rem;
-    margin-top: 5px;
   }
-  
-  /* More Button */
+
+  .vs {
+    font-size: 1.3rem;
+  }
+
+  .date {
+    font-size: 0.8rem;
+  }
+
   .more-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: white;
-    background-color: transparent;
-    border: 1px solid #aaa;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    padding: 8px 15px;
+    font-size: 0.9rem;
   }
-  
-  .more-button:hover {
-    background-color: #aaa;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
   }
-  
+
+  .match-card {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .team-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .team-name {
+    font-size: 0.9rem;
+  }
+
+  .team-score {
+    font-size: 0.8rem;
+  }
+
+  .vs {
+    font-size: 1.2rem;
+  }
+
+  .date {
+    font-size: 0.7rem;
+  }
+
+  .more-button {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+}

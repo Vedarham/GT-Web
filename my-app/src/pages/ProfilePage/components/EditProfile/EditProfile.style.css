@@ -1,0 +1,66 @@
+.edit-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; 
+  }
+  
+  .edit-form {
+  
+    
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .edit-form input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: white;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .edit-form input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .edit-form input:focus {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #9333ea;
+  }
+  
+  .btn-submit {
+    background: linear-gradient(145deg, #60a5fa, #2563eb);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .btn-submit:hover {
+    transform: scale(1.005);
+    box-shadow: 0px 0px 20px #60a5fa, 0px 0px 40px #2563eb;
+  }
+  
+  .btn-submit:active {
+    transform: scale(0.95);
+  }
+  
+  @media (max-width: 600px) {
+    .edit-form {
+      padding: 20px;
+    }
+  
+    .edit-form input {
+      font-size: 0.9rem;
+      padding: 8px 10px;
+    }
+  }

@@ -15,7 +15,7 @@ const SignUp = () => {
       //   setError(true);
       // }
       const onSubmit = async (data) => {
-        const res = await fetch('http://localhost:8000/api/auth/signup',{ method:"POST",headers:{
+        const res = await fetch('http://localhost:8080/api/auth/signup',{ method:"POST",headers:{
           "Content-Type":"application/json",
         }, body:JSON.stringify(data)})
         if(res.status !== 201){

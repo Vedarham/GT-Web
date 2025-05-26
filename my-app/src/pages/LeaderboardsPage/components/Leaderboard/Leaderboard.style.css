@@ -1,78 +1,148 @@
+.lboard-container {
+  margin: auto;
+  margin-top: 20px;
+  position: relative;
+  top: 60px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.lboard-subcontainer {
+  width: 100%;
+  max-width: 700px; /* Restrict max width for central alignment */
+  box-sizing: border-box;
+}
+
 .lboard-table {
-    height: 90%;
-    width: 90%;
+  background: linear-gradient(135deg, rgba(36, 37, 49, 1) 0%, rgba(64, 65, 85, 1) 100%);
+  color: aliceblue;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .lboard-logs {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Make all child cards take full width */
+  gap: 20px;
+  width: 100%;
 }
 
 .lboard-list {
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.lboard-list:hover {
+  transform: scale(1.05);
 }
 
 .lboard-logo {
-    height: 80px;
-    width: 80px;
-    border: 1px solid white;
-    object-fit: contain;
-    object-position: center;
-    overflow: hidden;
+  margin-left: 0;
+  flex-shrink: 0;
 }
+
+.lboard-logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.lboard-logo img:hover {
+  transform: scale(1.1);
+}
+
 
 .lboard-details {
-    width: 52%;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  min-width: 0;
 }
 
-.lboard-tags {
-    color: black;
-    width: 80%;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
+.lboard-title {
+  flex-grow: 1;
+}
+
+.lboard-title h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+  text-align: left;
 }
 
 .tag-box {
-    color: black;
-    background-color: white;
-    padding: 5px;
-}
-
-.tag-type {
-    background-color: #ffa500;
-}
-
-.lboard-lapse {
-    width: 12%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-.tag-cost {
-    background-color: greenyellow;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .lboard-status {
-    width: 12%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
+  min-width: 80px;
+}
+
+.lboard-status h3 {
+  color: #ffd700;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.lboard-status p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.switch-button {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.switch-button button {
+  background: #5c6bc0;
+  color: aliceblue;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+}
+
+.switch-button button:hover {
+  background: #3949ab;
+}
+
+.switch-button button:focus {
+  outline: none;
 }

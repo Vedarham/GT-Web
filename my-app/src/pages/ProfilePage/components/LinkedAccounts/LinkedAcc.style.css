@@ -1,0 +1,86 @@
+.linked-accounts-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.linked-accounts-container h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.account-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.account-card {
+  width: 200px;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.account-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.account-card .icon {
+  font-size: 40px;
+  color: #ff6600;
+  margin-bottom: 10px;
+}
+
+.account-card h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.account-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.connect-account-form {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.connect-account-form h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.connect-account-form input {
+  width: 250px;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.connect-account-form button {
+  padding: 10px 20px;
+  background: linear-gradient(to right, #9333ea, #2563eb);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.connect-account-form button:hover {
+  background-color: #e65c00;
+}

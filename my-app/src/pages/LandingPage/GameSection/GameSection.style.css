@@ -1,20 +1,24 @@
+
+
 .game-scroll {
   padding: 20px;
-  color: black;
-  height: 600px; /* Fixed height */
+  color: aliceblue;
+  height: auto; 
   display: flex;
-  align-items: center; /* Vertically center content */
+  flex-direction: column; 
+  align-items: center;
   justify-content: center;
 }
 
 .game-scroll-container {
-  width: 50%;
-  height: 350px;
+  width: 80%; 
+  max-width: 1200px; 
+  height: auto;
   margin: 0 auto;
 }
 
 .game-scroll-title {
-  font-size: 2rem;
+  font-size: 2.5rem; 
   font-weight: bold;
   color: white;
   text-align: center;
@@ -22,39 +26,53 @@
 }
 
 .game-scroll-title span {
-  color: #ffa500; /* Highlight color */
+  background: linear-gradient(to right, #9333ea, #2563eb);
+  background-clip: text;
+  color: transparent;
 }
 
 .game-scroll-content {
   display: flex;
+  flex-direction: row; 
   gap: 20px;
-  height: 100%; /* Ensures content respects fixed height */
+  flex-wrap: wrap; 
 }
 
 .game-scroll-main {
   flex: 2;
-  background: white;
+  background: linear-gradient(to left, #9333ea, #2563eb);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border-radius: 8px;
+  border: 2px solid aliceblue;
+  border-radius: 15px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row; 
+  gap: 20px;
+  justify-content: space-between;
+  flex-wrap: wrap; 
 }
 
 .game-scroll-main-image {
-  max-width: 100%;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  width: 100%; 
+  max-width: 300px; 
+  height: 300px;
+  border-radius: 5px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .game-scroll-main-details {
-  margin-top: 20px;
+  flex: 1;
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; 
 }
 
 .game-scroll-main-title {
-  color: #ffa500;
-  font-size: 1.5rem;
+  color: black;
+  font-weight: 800;
+  font-size: 1.6rem; 
 }
 
 .game-scroll-main-meta {
@@ -68,17 +86,18 @@
 }
 
 .game-scroll-main-buy {
+  width: 100%; 
+  max-width: 200px; 
+  margin-top: 6px;
   padding: 10px 20px;
-  background-color: #ffa500;
+  background: black;
   border: none;
-  color: white;
+  color: aliceblue;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
-}
-
-.game-scroll-main-buy:hover {
-  background-color: #e59400;
+  transition: 0.4s all ease-in-out;
+  text-align: center;
 }
 
 .game-scroll-sidebar {
@@ -86,15 +105,16 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  max-height: 100%; /* Make it responsive within fixed height */
-  overflow-y: auto; /* Enable scroll for sidebar */
+  max-height: 100%;
+  overflow-y: auto;
 }
+
 .game-scroll-sidebar::-webkit-scrollbar {
   display: none;
 }
 
 .game-scroll-item {
-  background: white;
+  background: linear-gradient(to right, #9333ea, #2563eb);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 10px;
   border-radius: 8px;
@@ -109,20 +129,83 @@
 }
 
 .game-scroll-item.active {
-  border: 2px solid #ffa500;
+  border: 2px solid aliceblue;
 }
 
 .game-scroll-item h4 {
-  color: #666;
+  color: aliceblue;
   margin: 5px 0;
 }
 
 .game-scroll-item h3 {
-  color: #222;
+  color: black;
   margin: 5px 0;
 }
 
 .game-scroll-item img {
   max-width: 100%;
+  height: auto;
   border-radius: 8px;
+}
+
+
+@media (max-width: 768px) {
+  .game-scroll-container{
+    width: 100%;
+    
+  }
+  .game-scroll-content {
+    text-align: left;
+    flex-direction: column; 
+  }
+
+  .game-scroll-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .game-scroll-main-image {
+    max-width: 450px;
+  }
+
+  .game-scroll-main-title {
+    font-size: 1.4rem; 
+  }
+
+  .game-scroll-main-buy {
+    width: 100%; 
+  }
+
+  .game-scroll-sidebar {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-scroll-title {
+    font-size: 2rem; 
+  }
+
+  .game-scroll-main-image {
+    max-width: 200px;
+  }
+
+  .game-scroll-main-title {
+    font-size: 1.2rem; 
+  }
+
+  .game-scroll-main-buy {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .game-scroll-sidebar {
+    gap: 5px; 
+  }
+
+  .game-scroll-item {
+    padding: 8px; 
+  }
 }

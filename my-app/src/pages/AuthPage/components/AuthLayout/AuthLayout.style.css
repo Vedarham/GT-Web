@@ -1,0 +1,126 @@
+/* Styles for the AuthLayout Component */
+.auth-layout {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    top: 60px;
+  }
+  
+  .left-section {
+    flex: 1;
+    display: none;
+    @media (min-width: 1024px) {
+      display: block;
+      width: 50%;
+      background: linear-gradient(135deg, #ff7c00, #0065c4, #42a644);
+      position: relative;
+      overflow: hidden;
+    }
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .floating-element {
+    position: absolute;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .floating-trophy {
+    top: 25%;
+    left: 25%;
+  }
+  
+  .floating-gamepad {
+    top: 50%;
+    right: 25%;
+  }
+  
+  .floating-headphones {
+    bottom: 25%;
+    left: 33%;
+  }
+  
+  .sicon {
+    width: 48px;
+    height: 48px;
+    color: white;
+  }
+  
+  .text-container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 3rem;
+  }
+  
+  .heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .subheading {
+    font-size: 1.25rem;
+    text-align: center;
+  }
+  
+  .map-illustration {
+    margin-top: 3rem;
+    width: 24rem;
+    height: 24rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    filter: blur(8px);
+    animation: pulse 2s infinite;
+  }
+  
+  .right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .form-container {
+    width: 100%;
+    max-width: 28rem;
+  }
+  
+  /* Floating animation */
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Pulse animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+  }
+  
